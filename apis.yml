@@ -1,0 +1,32 @@
+aid: geekflare
+name: GeekFlare
+description: "Provide numerous capabilities for important testing and monitoring methods for websites"
+url: https://apidocs.geekflare.com/docs/geekflare-api
+specificationVersion: '0.20'
+created: '2026-05-28'
+modified: '2026-05-28'
+x-source: public-apis/public-apis
+x-category: "Development"
+x-tier: 3
+x-tier-reason: bulk-registered-from-public-apis
+tags:
+  - Development
+  - Public APIs
+apis:
+  - name: GeekFlare
+    description: "Provide numerous capabilities for important testing and monitoring methods for websites"
+    humanURL: https://apidocs.geekflare.com/docs/geekflare-api
+    baseURL: https://apidocs.geekflare.com/docs/geekflare-api
+    tags:
+      - Development
+    properties:
+      - type: Documentation
+        url: https://apidocs.geekflare.com/docs/geekflare-api
+common:
+  - type: Website
+    url: https://apidocs.geekflare.com/docs/geekflare-api
+  - type: PublicAPIsListing
+    url: https://github.com/public-apis/public-apis
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
