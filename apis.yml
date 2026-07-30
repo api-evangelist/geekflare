@@ -1,4 +1,16 @@
 aid: geekflare
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/geekflare.png
 name: GeekFlare
 description: "Provide numerous capabilities for important testing and monitoring methods for websites"
 url: https://apidocs.geekflare.com/docs/geekflare-api
