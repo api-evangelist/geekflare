@@ -1,0 +1,48 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Geekflare OpenAPI
+  version: 1.0.0
+x-provenance:
+  generated: '2026-09-03'
+  method: generated
+  source: openapi/geekflare-openapi.json + https://docs.geekflare.com/api-credit-mapping + https://docs.geekflare.com/rate-limit-exceeded
+extends: openapi/geekflare-openapi.json
+actions:
+  - target: $.info
+    update:
+      contact:
+        name: Geekflare Support
+        url: https://geekflare.com/contact/?product=api
+      termsOfService: https://geekflare.com/terms/
+      x-credit-system: One shared credit pool across all endpoints; costs per request documented at https://docs.geekflare.com/api-credit-mapping
+      x-rate-limit-headers: [x-geekflare-ratelimit-second, x-geekflare-ratelimit-remaining-second, x-geekflare-ratelimit-reset, x-geekflare-credits-used, x-geekflare-credits-remaining]
+  - target: $.paths['/webscraping'].post
+    update: {x-credit-cost: 1}
+  - target: $.paths['/metascraping'].post
+    update: {x-credit-cost: 2}
+  - target: $.paths['/dnsrecord'].post
+    update: {x-credit-cost: 1}
+  - target: $.paths['/screenshot'].post
+    update: {x-credit-cost: 5}
+  - target: $.paths['/up'].post
+    update: {x-credit-cost: 1}
+  - target: $.paths['/redirectcheck'].post
+    update: {x-credit-cost: 1}
+  - target: $.paths['/brokenlink'].post
+    update: {x-credit-cost: 2}
+  - target: $.paths['/url2pdf'].post
+    update: {x-credit-cost: 5}
+  - target: $.paths['/openport'].post
+    update: {x-credit-cost: 2}
+  - target: $.paths['/tlsscan'].post
+    update: {x-credit-cost: 1}
+  - target: $.paths['/loadtime'].post
+    update: {x-credit-cost: 1, x-credit-cost-note: "8 credits flat when targetCountries is set"}
+  - target: $.paths['/ping'].post
+    update: {x-credit-cost: 2}
+  - target: $.paths['/lighthouse'].post
+    update: {x-credit-cost: 10}
+  - target: $.paths['/search'].post
+    update: {x-credit-cost: 2, x-credit-cost-note: "4 with scrape, 5 with grounded answer"}
+  - target: $.paths['/brand'].post
+    update: {x-credit-cost: 5, x-credit-cost-note: "10 in enriched mode"}

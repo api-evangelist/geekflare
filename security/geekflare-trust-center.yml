@@ -1,0 +1,18 @@
+generated: '2026-09-03'
+method: searched
+probe: true
+source: https://trust.geekflare.com/
+url: https://trust.geekflare.com/
+platform: Comp AI
+legal_entity: Geekflare LTD
+frameworks_in_progress:
+- {name: SOC 2 Type 2, status: Started}
+- {name: SOC 2 Type 1, status: Started}
+- {name: GDPR, status: Started}
+certifications: []
+program:
+  controls_monitored: 47
+  subprocessors_listed: 9
+  security_questionnaire: available (request access)
+  subprocessors_include: [Cloudflare, Firebase, Freshworks, Google, Google Workspace]
+note: Real first-party trust center verified 2026-09-03 (HTTP 200). All three frameworks show status "Started" — a compliance program in progress, NOT completed certifications. The ISO 27001/SOC 2/PCI DSS names on geekflare.com/security/ are the infrastructure vendors' (AWS/Cloudflare) certifications, not Geekflare's own; an earlier keyword probe over-credited PCI DSS and HIPAA, corrected here from the page body.

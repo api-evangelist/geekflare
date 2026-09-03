@@ -22,12 +22,12 @@ accessModel:
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/geekflare.png
-name: GeekFlare
-description: "Provide numerous capabilities for important testing and monitoring methods for websites"
-url: https://apidocs.geekflare.com/docs/geekflare-api
+name: Geekflare
+description: "Geekflare is an API platform for AI agents and web automation: one account and one x-api-key give access to AI-ready web scraping, web and news search with grounded answers, screenshots, PDF generation, brand data, and website/DNS/TLS/network testing — all returning structured JSON or clean Markdown, backed by an OpenAPI 3.1 contract, official Node.js and Python SDKs, and a hosted MCP server, with a permanent free tier of 500 credits per month."
+url: https://geekflare.com/
 specificationVersion: '0.23'
 created: '2026-05-28'
-modified: '2026-05-28'
+modified: '2026-09-03'
 x-source: public-apis/public-apis
 x-category: "Development"
 x-tier: 3
@@ -35,25 +35,107 @@ x-tier-reason: bulk-registered-from-public-apis
 tags:
   - Development
   - Public APIs
+  - Web Scraping
+  - Search
+  - Screenshots
+  - DNS
+  - Website Monitoring
+  - Security Testing
+  - AI Agents
+  - MCP
 apis:
-  - name: GeekFlare
-    description: "Provide numerous capabilities for important testing and monitoring methods for websites"
-    humanURL: https://apidocs.geekflare.com/docs/geekflare-api
-    baseURL: https://apidocs.geekflare.com/docs/geekflare-api
+  - name: Geekflare API
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/geekflare.png
+    description: "REST API suite for scraping, search, data extraction, screenshots, DNS lookups, and web utilities — 18 operations on a single base URL with a shared credit pool, documented in a published OpenAPI 3.1 contract and mirrored by a 20-tool MCP server."
+    humanURL: https://docs.geekflare.com/intro
+    baseURL: https://api.geekflare.com
     tags:
       - Development
+      - Web Scraping
+      - Search
+      - Screenshots
+      - DNS
     properties:
       - type: Documentation
-        url: https://apidocs.geekflare.com/docs/geekflare-api
+        url: https://docs.geekflare.com/intro
+      - type: APIReference
+        url: https://docs.geekflare.com/endpoint/reference
+      - type: OpenAPI
+        url: openapi/geekflare-openapi.json
+      - type: GettingStarted
+        url: https://docs.geekflare.com/quickstart/index
+      - type: MCPServer
+        url: mcp/geekflare-mcp.yml
+      - type: ToolCrosswalk
+        url: mcp/geekflare-tool-crosswalk.yml
 common:
+  - type: Authentication
+    url: authentication/geekflare-authentication.yml
   - type: DomainSecurity
     url: security/geekflare-domain-security.yml
   - type: Website
-    url: https://apidocs.geekflare.com/docs/geekflare-api
+    url: https://geekflare.com/
   - type: PublicAPIsListing
     url: https://github.com/public-apis/public-apis
   - url: https://geekflare.com/feed/
     type: Blog
+  - type: DeveloperPortal
+    url: https://dash.geekflare.com/
+  - type: Pricing
+    url: https://geekflare.com/pricing/
+  - type: TermsOfService
+    url: https://geekflare.com/terms/
+  - type: PrivacyPolicy
+    url: https://geekflare.com/privacy/
+  - type: Support
+    url: https://geekflare.com/contact/
+  - type: SignUp
+    url: https://auth.geekflare.com/register?service=geekflare_api
+  - type: GitHubOrganization
+    url: https://github.com/geekflare
+  - type: Postman
+    url: https://www.postman.com/geekflare/geekflare-api/collection/q0iiukn/geekflare
+  - type: StatusPage
+    url: https://status.geekflare.com
+  - type: ChangeLog
+    url: changelog/geekflare-changelog.yml
+  - type: Security
+    url: security/geekflare-vulnerability-disclosure.yml
+  - type: VulnerabilityDisclosure
+    url: security/geekflare-vulnerability-disclosure.yml
+  - type: TrustCenter
+    url: security/geekflare-trust-center.yml
+  - type: Compliance
+    url: security/geekflare-trust-center.yml
+  - type: LLMsTxt
+    url: llms/geekflare-llms.txt
+  - type: Packages
+    url: packages/geekflare-packages.yml
+  - type: SDKs
+    url: packages/geekflare-packages.yml
+  - type: Plans
+    url: plans/geekflare-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/geekflare-rate-limits.yml
+  - type: ErrorCatalog
+    url: errors/geekflare-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/geekflare-lifecycle.yml
+  - type: Conventions
+    url: conventions/geekflare-conventions.yml
+  - type: Conformance
+    url: conformance/geekflare-conformance.yml
+  - type: Overlay
+    url: overlays/geekflare-openapi-overlay.yaml
+  - type: Sandbox
+    url: sandbox/geekflare-sandbox.yml
+  - type: AgentSkill
+    url: skills/_index.yml
+x-enrichment:
+  date: '2026-09-03'
+  status: enriched
+  artifacts_added: 24
+  pass: local-v2
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

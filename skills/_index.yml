@@ -1,0 +1,17 @@
+generated: '2026-09-03'
+method: generated
+source: openapi/geekflare-openapi.json + docs.geekflare.com guides
+skills:
+  - file: geekflare-web-scraping-for-rag.md
+    name: geekflare-web-scraping-for-rag
+    operations: [webScrape, metaScrape]
+  - file: geekflare-grounded-web-search.md
+    name: geekflare-grounded-web-search
+    operations: [search]
+  - file: geekflare-site-health-audit.md
+    name: geekflare-site-health-audit
+    operations: [siteStatus, loadTime, lighthouse, brokenLink, mixedContent, redirectCheck]
+  - file: geekflare-domain-security-audit.md
+    name: geekflare-domain-security-audit
+    operations: [dnsRecord, dnsSec, tlsScan, openPorts, ping, mtr]
+note: All operationIds verified against openapi/geekflare-openapi.json (18 operations).

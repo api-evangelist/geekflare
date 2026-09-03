@@ -1,0 +1,21 @@
+generated: '2026-09-03'
+method: searched
+source: https://docs.geekflare.com/changelog + https://status.geekflare.com + docs sweep
+status_page:
+  url: https://status.geekflare.com
+  probed: '2026-09-03'
+  http_status: 200
+changelog:
+  url: https://docs.geekflare.com/changelog
+  note: Dated entries; see changelog/geekflare-changelog.yml.
+versioning:
+  scheme: none-published
+  note: Endpoints are unversioned paths on https://api.geekflare.com (no /v1 prefix); changes announced via the dated changelog. The 2026-08-05 entry removed a pricing tier and changed default rendering behavior without a version bump.
+deprecation_policy:
+  published: false
+  note: No deprecation policy, Sunset/Deprecation header usage, or deprecated operations found in the docs or the OpenAPI (0 operations flagged deprecated).
+sla:
+  published: false
+  note: No SLA page found; Enterprise plan advertises custom terms via sales.
+history:
+  note: Geekflare's earlier API docs host (apidocs.geekflare.com) now 301-redirects to geekflare.com; the current developer surface is docs.geekflare.com with the API relaunched as an agent-focused platform.

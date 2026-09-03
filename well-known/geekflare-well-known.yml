@@ -1,0 +1,37 @@
+generated: '2026-09-03'
+method: probed
+source: live probes of geekflare.com, www.geekflare.com, api.geekflare.com, apidocs.geekflare.com, docs.geekflare.com, mcp.geekflare.com
+note: No /.well-known documents are served on any Geekflare host — every path 404s (or 401s on the fully key-gated api host, 301-to-homepage on www/apidocs). Probe recorded as an honest absence; no WellKnown pointer emitted. The provider's llms.txt (a real 200 hit at geekflare.com/llms.txt) is captured separately under llms/.
+hosts:
+  - host: geekflare.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404, file: null}
+      - {path: /.well-known/openid-configuration, status: 404, file: null}
+      - {path: /.well-known/oauth-authorization-server, status: 404, file: null}
+      - {path: /.well-known/api-catalog, status: 404, file: null}
+      - {path: /.well-known/ai-plugin.json, status: 404, file: null}
+      - {path: /.well-known/agent-card.json, status: 404, file: null}
+      - {path: /.well-known/agent.json, status: 404, file: null}
+      - {path: /security.txt, status: 404, file: null}
+  - host: api.geekflare.com
+    documents:
+      - {path: /.well-known/security.txt, status: 401, file: null}
+      - {path: /.well-known/openid-configuration, status: 401, file: null}
+      - {path: /.well-known/oauth-authorization-server, status: 401, file: null}
+      - {path: /.well-known/api-catalog, status: 401, file: null}
+      - {path: /.well-known/ai-plugin.json, status: 401, file: null}
+      - {path: /.well-known/agent-card.json, status: 401, file: null}
+      - {path: /.well-known/agent.json, status: 401, file: null}
+  - host: mcp.geekflare.com
+    documents:
+      - {path: /.well-known/oauth-authorization-server, status: 404, file: null}
+      - {path: /.well-known/oauth-protected-resource, status: 404, file: null}
+  - host: www.geekflare.com
+    documents:
+      - {path: /.well-known/security.txt, status: 301, file: null}
+      - {path: /.well-known/agent-card.json, status: 301, file: null}
+  - host: apidocs.geekflare.com
+    documents:
+      - {path: /.well-known/security.txt, status: 301, file: null}
+      - {path: /.well-known/agent-card.json, status: 301, file: null}
+agent_card: absent

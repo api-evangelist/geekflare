@@ -1,0 +1,97 @@
+# Geekflare
+
+- [Geekflare Docs](https://docs.geekflare.com/index.md)
+- [Colophon](https://docs.geekflare.com/colophon.md)
+- [Introduction](https://docs.geekflare.com/intro.md): Welcome to the Geekflare Documentation.
+- [API Playground](https://docs.geekflare.com/api-playground.md)
+- [API Credit Consumption](https://docs.geekflare.com/api-credit-mapping.md)
+- [API Integrations & SDKs](https://docs.geekflare.com/integrations.md): Official SDKs and integrations for Geekflare.
+- [API Logs](https://docs.geekflare.com/api-request-logs.md): Check API requests in near realtime.
+- [Teams & Workspaces](https://docs.geekflare.com/teams.md): Teams features in Geekflare.
+- [Quickstart](https://docs.geekflare.com/quickstart/index.md): Get up and running with Geekflare in your preferred language or framework.
+- [Node.js](https://docs.geekflare.com/quickstart/nodejs.md): Use Geekflare in Node.js or TypeScript project with the official SDK or raw fetch.
+- [Next.js](https://docs.geekflare.com/quickstart/nextjs.md): Use Geekflare in a Next.js application with Server Actions, Route Handlers, and Server Components.
+- [NestJS](https://docs.geekflare.com/quickstart/nestjs.md): Integrate Geekflare into a NestJS application using injectable services, ConfigModule, and typed DTOs.
+- [Cloudflare Workers](https://docs.geekflare.com/quickstart/cloudflare-workers.md): Call Geekflare from a Cloudflare Worker using the edge-native fetch API and Wrangler secrets.
+- [Python](https://docs.geekflare.com/quickstart/python.md): Use Geekflare in any Python project with the official SDK or the requests library.
+- [Django](https://docs.geekflare.com/quickstart/django.md): Integrate Geekflare into a Django application using a reusable service class, views, and python-decouple for config.
+- [PHP](https://docs.geekflare.com/quickstart/php.md): Use Geekflare in any PHP project with native cURL or the Guzzle HTTP client.
+- [Laravel](https://docs.geekflare.com/quickstart/laravel.md): Integrate Geekflare into a Laravel application using the built-in HTTP client, a service class, and .env config.
+- [Go](https://docs.geekflare.com/quickstart/go.md): Use Geekflare in a Go application using the standard net/http package and os.Getenv for config.
+- [Web Scraping Guide](https://docs.geekflare.com/guides/web-scraping.md): Extract full page content from any URL as Markdown, JSON, HTML, or LLM-ready text. Supports JavaScript rendering, stealth mode, proxy routing, and structured data extraction.
+- [Search Guide](https://docs.geekflare.com/guides/search.md): Search the web, news, or images and get structured results in JSON, Markdown, or HTML. Supports AI-grounded answers, content scraping, domain filtering, and time-based filtering.
+- [Screenshot Guide](https://docs.geekflare.com/guides/screenshot.md): Capture full-page or viewport screenshots of any website. Supports device emulation, ad blocking, CAPTCHA bypass, proxy routing, Retina quality, and AI-friendly link highlighting.
+- [MCP Server](https://docs.geekflare.com/mcp/overview.md): Connect Geekflare to AI assistants and coding tools using the Model Context Protocol (MCP).
+- [Cursor](https://docs.geekflare.com/mcp/cursor.md): Connect Geekflare to Cursor using MCP to give the AI agent web scraping, search, screenshot, and DNS tools.
+- [Claude Desktop](https://docs.geekflare.com/mcp/claude-desktop.md): Connect Geekflare to Claude Desktop using MCP to give web context, take a screenshot, run network test, and more.
+- [Claude Code](https://docs.geekflare.com/mcp/claude-code.md): Add Geekflare MCP server to Claude Code for scraping websites, searching the internet, and retrieving brand details in your terminal.
+- [Devin Desktop](https://docs.geekflare.com/mcp/windsurf.md): Connect Geekflare MCP server to Devin Desktop (earlier known as Windsurf) to enable web scraping, search, screenshot, and DNS tools in the AI agent.
+- [VS Code](https://docs.geekflare.com/mcp/vscode.md): Add the Geekflare MCP server to VS Code to enable web scraping, search, and screenshot tools in GitHub Copilot agent mode.
+- [Cline](https://docs.geekflare.com/mcp/cline.md): Connect Geekflare MCP server to Cline in VS Code for web scraping, search, screenshot, and DNS tools in your agentic coding workflow.
+- [Roo Code](https://docs.geekflare.com/mcp/roo-code.md): Connect Geekflare MCP server to Roo Code for web scraping, search, screenshot, and DNS tools in your AI coding workflow.
+- [Zed](https://docs.geekflare.com/mcp/zed.md): Connect Geekflare MCP server to Zed editor for web scraping, search, screenshot, and DNS tools in the AI assistant.
+- [n8n](https://docs.geekflare.com/mcp/n8n.md): Connect Geekflare MCP server to n8n to use web scraping, search, screenshot, and DNS tools in your automation workflows.
+- [BoltAI](https://docs.geekflare.com/mcp/boltai.md): Connect Geekflare MCP server to BoltAI for scraping, search, screenshot, and DNS tools in your Mac AI assistant.
+- [LM Studio](https://docs.geekflare.com/mcp/lm-studio.md): Connect Geekflare MCP server to LM Studio to give local LLMs web scraping, search, screenshot, and DNS tools.
+- [Amazon Q](https://docs.geekflare.com/mcp/amazon-q.md): Connect Geekflare MCP server to Amazon Q Developer for web scraping, search, screenshot, and DNS tools in your coding workflow.
+- [Other Clients](https://docs.geekflare.com/mcp/others.md): Generic MCP configuration for any client that supports Streamable HTTP or stdio transport.
+- [Using Proxies](https://docs.geekflare.com/using-proxies.md): Geekflare Proxy Support
+- [Lighthouse in Advanced Mode](https://docs.geekflare.com/lighthouse-advanced.md): How to run Lighthouse API in advanced mode
+- [Web Scraping Output Format](https://docs.geekflare.com/web-scraping-output-format.md): Available output format types for Geekflare's Web Scraping API.
+- [AI Extraction](https://docs.geekflare.com/ai-extraction-web-scraping.md): Ask AI to answer questions, extract structured data, or analyze scraped web pages using Geekflare's Web Scraping API.
+- [Load Time: Multi-Location Testing](https://docs.geekflare.com/load-time-multi-location.md): Test website load time and reachability from multiple countries in a single Load Time API request.
+- [Best Practices](https://docs.geekflare.com/best-practices.md): Production-ready patterns for retries, timeouts, concurrency, and idempotency when calling the Geekflare.
+- [Error Code Reference](https://docs.geekflare.com/error-codes.md): Complete reference for every HTTP status code and apiCode the Geekflare API can return, with sample responses.
+- [Unauthorized Error](https://docs.geekflare.com/unauthorized.md): 401 Unauthorized (Missing or Invalid API Key)
+- [Forbidden Error](https://docs.geekflare.com/forbidden.md): 403 Forbidden (Endpoint Requires a Higher Plan)
+- [Rate Limit Exceeded Error](https://docs.geekflare.com/rate-limit-exceeded.md): 429 Too Many Requests (Rate Limit Exceeded)
+- [Credit Exhausted](https://docs.geekflare.com/credit-exhausted.md): Error: Credit Exhausted (402)
+- [Changelog](https://docs.geekflare.com/changelog.md): New features, changes, and fixes to the Geekflare API.
+- [Geekflare API Reference](https://docs.geekflare.com/endpoint/reference.md): Complete reference for all Geekflare API endpoints.
+- [Web Scraping](https://docs.geekflare.com/endpoint/webscraping.md): Fetch a page and return content as Markdown, HTML, JSON, or plain text. Automatically detects whether JavaScript rendering is needed, with optional stealth mode, `proxyMode`-controlled proxy routing, CSS/XPath field extraction, and ready-made `product`/`contact` extraction templates.
+- [Search](https://docs.geekflare.com/endpoint/search.md): Structured search results from the web or news. Strips out ads and HTML noise to provide pure data in JSON, Markdown, or HTML. Fully supports AI-grounded answers, search-with-scrape, image search, and targeted Web or News sourcing.
+- [Brand](https://docs.geekflare.com/endpoint/brand.md): Retrieve structured brand information for a website domain, including key brand details useful for identifying and understanding a website or company.
+- [Meta Scraping](https://docs.geekflare.com/endpoint/metascraping.md): Extract a page's meta tags, Open Graph, and Twitter Card data like title, description, canonical URL, images, and more without scraping the full page body.
+- [Screenshot](https://docs.geekflare.com/endpoint/screenshot.md): Capture a pixel-perfect screenshot of any URL as PNG, JPEG, or WebP. Supports full-page capture, device emulation, custom viewports, and CAPTCHA/cookie-banner bypass.
+- [DNS Records](https://docs.geekflare.com/endpoint/dns-records.md): Look up A, AAAA, CNAME, MX, CAA, NS, SOA, SRV, and TXT records for any domain. Query every supported type in one call, or pass `types` to fetch only the ones you need.
+- [Broken Link Checker](https://docs.geekflare.com/endpoint/broken-link.md): Scan a webpage for broken links and report which URLs return errors, so you can fix dead links before they hurt SEO or user experience.
+- [Mixed Content](https://docs.geekflare.com/endpoint/mixed-content.md): Scan an HTTPS page for insecure HTTP resources like images, scripts, or stylesheets that trigger browser security warnings and break the padlock icon.
+- [Lighthouse](https://docs.geekflare.com/endpoint/lighthouse.md): Run a Google Lighthouse audit for performance, SEO, accessibility, and best practices, with support for advanced flags via the `parameters` array.
+- [Load Time](https://docs.geekflare.com/endpoint/load-time.md): Measure how long a webpage takes to fully load from a real browser. Pass `targetCountries` (up to 3 ISO country codes) to also test reachability from those locations via proxy alongside the default US server test, and compare results side by side.
+- [Site Status](https://docs.geekflare.com/endpoint/site-status.md): Check whether a website is reachable and returns a successful HTTP response. Ideal for uptime monitoring and pre-flight checks before running other tests.
+- [DNSSEC](https://docs.geekflare.com/endpoint/dnssec.md): Check whether DNSSEC is properly configured and validating for a domain, helping you confirm protection against DNS spoofing and cache poisoning attacks.
+- [MTR](https://docs.geekflare.com/endpoint/mtr.md): Run a My Traceroute (MTR) diagnostic between Geekflare and a target host, combining traceroute and ping to show packet loss and latency at each network hop.
+- [Ping](https://docs.geekflare.com/endpoint/ping.md): Send ICMP ping requests to a URL or IP and return latency, packet loss, and round-trip time statistics — useful for quick reachability and network health checks.
+- [TLS Scan](https://docs.geekflare.com/endpoint/tls-scan.md): Inspect a domain's TLS/SSL configuration, including which protocol versions are supported (from the deprecated and insecure SSLv2/SSLv3 through TLS 1.3) and certificate details, to catch expiring certificates and outdated, insecure configurations.
+- [Port Scanner](https://docs.geekflare.com/endpoint/port-scanner.md): Scan a domain or IP for open TCP ports, either across the top N most common ports or a custom range you specify. Useful for surface-level network security audits and exposure checks.
+- [URL Redirection Checker](https://docs.geekflare.com/endpoint/url-redirect.md): Trace the full redirect chain of a URL, including every intermediate hop, status code, and the final destination. Useful for auditing SEO redirects and link rot.
+- [PDF Generator](https://docs.geekflare.com/endpoint/pdf-generator.md): Convert any URL into a downloadable PDF document, with control over page orientation, margins, and scale. Useful for archiving pages or generating reports.
+- [Geekflare AI Docs](https://docs.geekflare.com/ai/intro.md): Welcome to Geekflare AI documentation! We’re excited to have you on board.
+- [Account Management](https://docs.geekflare.com/ai/general/account-management.md)
+- [Supported Payment Methods](https://docs.geekflare.com/ai/general/payment-method.md)
+- [Refund Policy](https://docs.geekflare.com/ai/general/refund-policy.md)
+- [Security and Trust at Geekflare AI](https://docs.geekflare.com/ai/general/security-trust.md)
+- [Support and Feedback](https://docs.geekflare.com/ai/general/support-and-feedback.md)
+- [Chat Interface](https://docs.geekflare.com/ai/features/chat-interface.md): Familiarize yourself with Geekflare AI advanced chat interface.
+- [Organization](https://docs.geekflare.com/ai/features/organization.md): Learn about Organization in Geekflare AI.
+- [Workspace](https://docs.geekflare.com/ai/features/workspace.md): Organize chats, manage prompts, and collaborate with your team.
+- [Projects](https://docs.geekflare.com/ai/features/projects.md): Create projects to organize your conversations and collaborate with your team.
+- [Prompt Library](https://docs.geekflare.com/ai/features/prompt-library.md): Ready-to-use prompts or create your own.
+- [Quick Start Guide](https://docs.geekflare.com/ai/connect/getting-started.md)
+- [Supported AI Models](https://docs.geekflare.com/ai/connect/supported-ai-models.md): Supported AI models in Geekflare Connect, BYOK AI Workspace.
+- [Getting API Keys for AI Models](https://docs.geekflare.com/ai/connect/getting-ai-api-keys.md)
+- [Search API](https://docs.geekflare.com/ai/connect/getting-search-api-keys.md)
+- [Chat Credit System](https://docs.geekflare.com/ai/chat/credit-system.md): How credits are calculated in Geekflare Chat
+- [Supported AI Models](https://docs.geekflare.com/ai/chat/available-models.md): All Available AI Models in Geekflare Chat.
+- [Supported File Types in Geekflare Chat](https://docs.geekflare.com/ai/chat/supported-file-types.md)
+- [Understanding Memory and Context](https://docs.geekflare.com/ai/chat/memory-and-context.md): How memory and context is managed in Geekflare Chat.
+- [Copy and Export Chat Responses](https://docs.geekflare.com/ai/chat/copy-export.md)
+- [Understanding the Long Context Notice](https://docs.geekflare.com/ai/chat/what-is-long-context-notice.md)
+
+## OpenAPI Specs
+
+- [openapi](/endpoint/openapi.json)
+
+## Optional
+
+- [Playground](https://dash.geekflare.com/playground)

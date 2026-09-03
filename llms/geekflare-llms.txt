@@ -1,0 +1,76 @@
+# Geekflare
+
+> Geekflare is an API platform for AI agents and web automation. One account and one API key give access to multiple endpoints covering AI-ready web scraping, web search, screenshots, PDF generation, and website/DNS/security testing — all returning structured JSON or clean Markdown. No proxies or headless browsers to manage; Geekflare handles CAPTCHAs, JS rendering, and proxy rotation. Free tier: 500 credits/month, no credit card required.
+
+Base URL for all API requests: `https://api.geekflare.com`. Authentication is a single API key sent as a header <x-api-key>, usable across every endpoint below — there is one credit pool for the whole suite, not per-endpoint keys or plans. Full parameter-level reference and a machine-readable OpenAPI spec live at docs.geekflare.com and have their own llms.txt (linked below).
+
+## Get Started
+
+- [Home](https://geekflare.com/): Product overview, live interactive demos, and quick summary of every endpoint.
+- [Get a Free API Key](https://auth.geekflare.com/register?service=geekflare_api): Create an account and get an API key in under 30 seconds. No credit card required.
+- [Pricing](https://geekflare.com/pricing/): Plan tiers, credit costs per endpoint, and concurrency limits. Free plan includes 500 credits/month; paid plans start at $19/mo.
+- [All APIs / Collection Page](https://geekflare.com/collection/): Full catalogue of every API endpoint with links to docs.
+- [Documentation Home](https://docs.geekflare.com/api/intro/): Getting-started guide, authentication, and credit system explained.
+- [API Reference](https://docs.geekflare.com/api/endpoint/reference): Complete parameter and response reference for every endpoint, organized by category (AI & Scraping, Website Testing, DNS & Network, Security).
+- [Full Documentation llms.txt](https://docs.geekflare.com/llms.txt): Machine-readable index of the entire docs site — SDK guides, framework quickstarts, MCP setup, and per-endpoint reference pages.
+- [Credit System](https://docs.geekflare.com/api/api-credit-mapping): How the shared credit pool works. Simple endpoints (DNS Lookup, TLS Scan, Scraping) cost 1 credit; heavier ones (Screenshot, PDF Generation) cost 5 credits.
+
+## Core API Endpoints
+
+### AI & Scraping
+- [Web Scraping API](https://docs.geekflare.com/api/endpoint/webscraping): Extract full page content from any URL as LLM-ready Markdown, JSON, or HTML. Supports JavaScript rendering, stealth mode (CAPTCHA bypass), and proxy routing. The recommended endpoint for RAG ingestion and feeding LLM context.
+- [Search API](https://docs.geekflare.com/api/endpoint/search): Structured web or news search results in JSON, Markdown, or HTML, stripped of ads and HTML noise. Supports AI-grounded answers, search-with-scrape, image search, and time-based filtering — built for powering AI agents with live web access.
+- [Meta Scraping API](https://docs.geekflare.com/api/endpoint/metascraping): Extract Open Graph tags, JSON-LD schema, titles, and descriptions from a page without parsing the full DOM.
+- [Screenshot API](https://docs.geekflare.com/api/endpoint/screenshot): Full-page or viewport screenshots of any URL. Supports device emulation, ad blocking, CAPTCHA bypass, proxy routing, Retina quality, and AI-friendly link highlighting.
+- [PDF Generator API](https://docs.geekflare.com/api/endpoint/pdf-generator): Convert any URL into a high-fidelity PDF document for invoices, reports, and archiving.
+
+### Website Testing
+- [Broken Link Checker API](https://docs.geekflare.com/api/endpoint/broken-link): Crawl a page to find dead internal and external links (404s and other errors).
+- [Lighthouse API](https://docs.geekflare.com/api/endpoint/lighthouse): Run Google Lighthouse audits (performance, SEO, accessibility) and return results as JSON or HTML.
+- [Load Time API](https://docs.geekflare.com/api/endpoint/load-time): Measure page load speed, including TTFB, DNS lookup, and connection timing.
+- [URL Redirection API](https://docs.geekflare.com/api/endpoint/url-redirect): Trace the full redirect chain of a URL with status codes and headers — useful for affiliate-link auditing and phishing detection.
+- [Site Uptime / Status API](https://docs.geekflare.com/api/endpoint/site-status): Verify a website is reachable from the cloud and check its HTTP status globally.
+
+### DNS & Security
+- [DNS Records API](https://docs.geekflare.com/api/endpoint/dns-records): Query A, AAAA, CNAME, MX, NS, TXT, CAA, SOA, and SRV records for any domain — useful for SaaS domain verification and SPF/DKIM/DMARC auditing.
+- [TLS Scan API](https://docs.geekflare.com/api/endpoint/tls-scan): Analyze SSL/TLS certificate validity, issuer details, supported versions, and expiration dates.
+- [Port Scanner API](https://docs.geekflare.com/api/endpoint/port-scanner): Scan a domain or IP for open TCP ports.
+
+## Individual Product Pages
+- [Web Scraping](https://geekflare.com/webscraping/)
+- [Web Search](https://geekflare.com/search/)
+- [Meta Scraping](https://geekflare.com/metascraping/)
+- [Screenshot](https://geekflare.com/screenshot/)
+- [DNS Lookup](https://geekflare.com/dnsrecord/)
+- [Broken Link Checker](https://geekflare.com/brokenlink/)
+- [URL Redirect Checker](https://geekflare.com/redirectchecker/)
+
+## SDKs & No-Code Integrations
+- [Node.js / TypeScript SDK](https://www.npmjs.com/package/@geekflare/api-node): Official npm package.
+- [Python SDK](https://pypi.org/project/geekflare-api/): Official PyPI package.
+- [Zapier Integration](https://zapier.com/apps/geekflare/integrations): Connect Geekflare to 8,000+ apps with no code.
+- [Make Integration](https://www.make.com/en/integrations/geekflare): Build visual automation scenarios with Geekflare endpoints.
+- [Framework Quickstarts](https://docs.geekflare.com/llms.txt): Copy-paste integration guides for Next.js, Node.js, Python, PHP, Go, Django, Laravel, NestJS, and Cloudflare Workers (see full docs index).
+
+## MCP Server (AI Agents & IDEs)
+- [MCP Server Overview](https://geekflare.com/mcp/): Connect Geekflare's web scraping, search, screenshot, and DNS tools to any AI assistant or coding agent via Model Context Protocol.
+- Supported clients (setup guides indexed at [docs.geekflare.com/llms.txt](https://docs.geekflare.com/llms.txt)): Claude Desktop, Claude Code, Cursor, Cline, VS Code (GitHub Copilot), Zed, Devin Desktop, Roo Code, LM Studio, Bolt AI, Amazon Q, n8n, and any client supporting Streamable HTTP or stdio transport.
+
+## Use Cases
+- **RAG & LLM context**: Use the Web Scraping API to turn any page into token-efficient Markdown for vector databases and prompts.
+- **AI agent web access**: Use the Search API to give agents grounded, real-time answers from the web or news.
+- **Competitive & UI monitoring**: Use the Screenshot API for visual regression testing and archiving competitor pages.
+- **SaaS domain verification & deliverability**: Use the DNS Records and DNSSEC APIs to check SPF/DKIM/DMARC and domain ownership.
+- **Site health & SEO**: Use the Lighthouse, Load Time, and Broken Link Checker APIs for performance and quality audits.
+- **Security posture checks**: Use the TLS Scan and Port Scanner APIs to audit certificates and exposed services.
+
+## Company
+- [About Us](https://geekflare.com/about/)
+- [Status Page](https://status.geekflare.com)
+- [Contact](https://geekflare.com/contact/?product=api)
+
+## Optional
+- [Geekflare Tools](https://geekflare.com/tools): Free web-based utility tools.
+- [Geekflare Guides](https://geekflare.com/guides/): Editorial buying guides for B2B software and APIs.
+- [Terms of Service](https://geekflare.com/terms/)
+- [Privacy Policy](https://geekflare.com/privacy/)

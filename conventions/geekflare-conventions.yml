@@ -1,0 +1,46 @@
+generated: '2026-09-03'
+method: searched
+source: https://docs.geekflare.com/best-practices + https://docs.geekflare.com/intro + openapi/geekflare-openapi.json
+auth:
+  style: api-key
+  header: x-api-key
+  note: One key across every endpoint; single shared credit pool. See authentication/geekflare-authentication.yml.
+request_style:
+  note: All 18 public operations are POST with a JSON body; base URL https://api.geekflare.com; unversioned paths.
+envelope:
+  success: '{timestamp, apiStatus: "success", apiCode: 200, message, meta, data}'
+  failure: '{timestamp, apiStatus: "failure", apiCode, message, meta?}'
+  note: apiCode mirrors the HTTP status. See errors/geekflare-problem-types.yml.
+idempotency:
+  coverage: none
+  note: No Idempotency-Key or replay-protection mechanism exists. The docs state endpoints are stateless HTTP calls — retrying an identical request re-runs it and consumes credits again — and recommend checking API Logs (https://docs.geekflare.com/api-request-logs) before re-firing credit-heavy calls after an ambiguous timeout.
+  docs: https://docs.geekflare.com/best-practices
+reversibility:
+  status: na
+  note: The API has no state-mutating write surface to reverse — every operation (scrape, search, screenshot, DNS/TLS/network tests, PDF generation) executes a stateless utility task and returns a result. The only side effect is credit consumption, and 5xx failures are generally not charged (https://docs.geekflare.com/api-credit-mapping#2-failed-requests). No cancel/undo operations exist or are needed.
+dry_run:
+  status: na
+  note: No dry-run mode published; credit cost per request is shown in the Playground before execution.
+pagination:
+  style: none
+  note: Responses return complete result sets per request; no cursor or page parameters in the OpenAPI.
+rate_limit_signaling:
+  headers: [x-geekflare-ratelimit-second, x-geekflare-ratelimit-remaining-second, x-geekflare-ratelimit-reset]
+  exhaustion_status: 429
+  see: rate-limits/geekflare-rate-limits.yml
+usage_signaling:
+  headers: [x-geekflare-credits-used, x-geekflare-credits-remaining]
+  note: Credit balance is reported inline on every response; 402 when exhausted.
+retries:
+  retryable: [429, 5xx]
+  non_retryable: [401, 402, 403, 404]
+  strategy: Respect x-geekflare-ratelimit-reset, then exponential backoff with jitter.
+timeouts:
+  fast_endpoints: 10-15s (DNS Lookup, Ping, Site Status, TLS Scan)
+  browser_endpoints: 30-60s (Web Scraping with rendering, Screenshot, Lighthouse)
+versioning:
+  scheme: none-published
+  see: lifecycle/geekflare-lifecycle.yml
+request_id_tracing:
+  published: false
+  note: No documented request-id header; API Logs dashboard provides near-realtime request inspection.

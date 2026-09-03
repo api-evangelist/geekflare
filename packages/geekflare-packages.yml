@@ -1,0 +1,37 @@
+generated: '2026-09-03'
+method: searched
+source: https://docs.geekflare.com/integrations + registry.npmjs.org + pypi.org
+packages:
+  - name: "@geekflare/api-node"
+    registry: npm
+    url: https://www.npmjs.com/package/@geekflare/api-node
+    language: JavaScript/TypeScript
+    official: true
+    version: 0.2.0
+    published: '2026-08-21'
+    note: Official Node.js / TypeScript SDK for Geekflare API, with built-in type definitions. Version/date read from registry.npmjs.org.
+  - name: geekflare-api
+    registry: pypi
+    url: https://pypi.org/project/geekflare-api/
+    language: Python
+    official: true
+    version: 0.2.0
+    published: '2026-08-21'
+    note: Official Python SDK for Geekflare API. Version/date read from pypi.org/pypi/geekflare-api/json.
+  - name: "@geekflare/mcp"
+    registry: npm
+    url: https://www.npmjs.com/package/@geekflare/mcp
+    language: JavaScript/TypeScript
+    official: true
+    version: 0.4.0
+    published: '2026-08-21'
+    note: Official MCP server for Geekflare API (local stdio transport via npx -y @geekflare/mcp). Version/date read from registry.npmjs.org.
+integrations:
+  - name: Zapier
+    url: https://zapier.com/apps/geekflare/integrations
+    official: true
+    note: No-code integration connecting Geekflare endpoints to 8,000+ apps.
+  - name: Make
+    url: https://www.make.com/en/integrations/geekflare
+    official: true
+    note: Visual automation scenarios with Geekflare modules.

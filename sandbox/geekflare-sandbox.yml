@@ -1,0 +1,15 @@
+generated: '2026-09-03'
+method: searched
+source: https://docs.geekflare.com/api-playground + https://geekflare.com/pricing/
+model: free-tier-plus-playground
+free_tier:
+  credits: 500 per month
+  rate_limit_rps: 1
+  credit_card_required: false
+  note: The provider positions the permanent free tier as the trial surface ("Better than a trial... effectively forever").
+playground:
+  url: https://dash.geekflare.com/playground
+  note: Interactive in-browser playground for every endpoint; shows the credit cost of each request before execution. Requires a (free) account login.
+test_keys:
+  published: false
+  note: No separate test-vs-live key modes, test tokens, or fixtures published; the same x-api-key works everywhere against the single production environment.

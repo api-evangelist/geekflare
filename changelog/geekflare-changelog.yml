@@ -1,0 +1,29 @@
+generated: '2026-09-03'
+method: searched
+source: https://docs.geekflare.com/changelog
+scheme: dated entries (no semantic API version; changes are additive per-endpoint)
+url: https://docs.geekflare.com/changelog
+entries:
+  - date: '2026-08-17'
+    title: TLS legacy protocol checks and Web Scraping templates
+    breaking: false
+    highlights:
+      - TLS Scan now detects deprecated SSLv2/SSLv3 support
+      - Web Scraping adds extractionMode "template" with product and contact templates
+  - date: '2026-08-11'
+    title: Load Time multi-location testing
+    breaking: false
+    highlights:
+      - targetCountries (up to 3 ISO codes) tests reachability from multiple countries in one request, flat 8 credits
+  - date: '2026-08-07'
+    title: IPv6 support for Ping and Port Scanner
+    breaking: false
+    highlights:
+      - Ping and Port Scanner accept IPv6 addresses and URLs
+  - date: '2026-08-05'
+    title: Web Scraping pricing and rendering
+    breaking: true
+    highlights:
+      - All Web Scraping requests now cost a flat 1 credit; the 2-credit "standard" tier removed
+      - renderJS now automatic by default (browser fallback only when needed)
+      - New proxyMode parameter (false / auto / true) replaces proxyCountry-only proxy triggering

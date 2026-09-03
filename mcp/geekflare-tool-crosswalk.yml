@@ -1,0 +1,37 @@
+generated: '2026-09-03'
+method: derived
+source: openapi/geekflare-openapi.json + https://docs.geekflare.com/mcp/overview
+surfaces:
+  openapi: openapi/geekflare-openapi.json
+  mcp: https://mcp.geekflare.com/{API_KEY}/mcp (key-gated; tool list from provider docs)
+crosswalk:
+  - {tool: webScrape, category: scraping, rest: [webScrape], binding: same-name, confidence: high}
+  - {tool: metaScrape, category: scraping, rest: [metaScrape], binding: same-name, confidence: high}
+  - {tool: screenshot, category: rendering, rest: [screenshot], binding: same-name, confidence: high}
+  - {tool: search, category: search, rest: [search], binding: same-name, confidence: high}
+  - {tool: dnsRecord, category: dns, rest: [dnsRecord], binding: same-name, confidence: high}
+  - {tool: siteStatus, category: monitoring, rest: [siteStatus], binding: same-name, confidence: high}
+  - {tool: redirectCheck, category: monitoring, rest: [redirectCheck], binding: same-name, confidence: high}
+  - {tool: brokenLink, category: site-quality, rest: [brokenLink], binding: same-name, confidence: high}
+  - {tool: url2Pdf, category: rendering, rest: [url2Pdf], binding: same-name, confidence: high}
+  - {tool: openPorts, category: network-security, rest: [openPorts], binding: same-name, confidence: high}
+  - {tool: tlsScan, category: network-security, rest: [tlsScan], binding: same-name, confidence: high}
+  - {tool: loadTime, category: performance, rest: [loadTime], binding: same-name, confidence: high}
+  - {tool: mixedContent, category: site-quality, rest: [mixedContent], binding: same-name, confidence: high}
+  - {tool: dnsSec, category: dns, rest: [dnsSec], binding: same-name, confidence: high}
+  - {tool: mtr, category: network-diagnostics, rest: [mtr], binding: same-name, confidence: high}
+  - {tool: ping, category: network-diagnostics, rest: [ping], binding: same-name, confidence: high}
+  - {tool: lighthouse, category: performance, rest: [lighthouse], binding: same-name, confidence: high}
+mcp_only:
+  - {tool: ttfb, reason: "No dedicated public REST operation in the published OpenAPI; TTFB is reported inside loadTime response data"}
+  - {tool: httpHeader, reason: "No public REST operation in the published OpenAPI (18 paths); header retrieval exposed only as an MCP tool"}
+  - {tool: httpProtocol, reason: "No public REST operation in the published OpenAPI; HTTP version detection exposed only as an MCP tool"}
+rest_only:
+  - {operationId: brand, reason: "Brand data endpoint (POST /brand) has no MCP tool in the documented 20-tool list"}
+coverage:
+  mcp_tools: 20
+  mapped_to_rest: 17
+  mcp_only: 3
+  rest_operations: 18
+  rest_only: 1
+note: MCP tool names match OpenAPI operationIds one-for-one for 17 of 20 tools; mapped by name/semantics because the live MCP schema is key-gated.

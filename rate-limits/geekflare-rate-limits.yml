@@ -1,0 +1,42 @@
+generated: '2026-09-03'
+method: searched
+source: https://docs.geekflare.com/intro#rate-limits + https://docs.geekflare.com/rate-limit-exceeded
+docs: https://docs.geekflare.com/rate-limit-exceeded
+limit_count: 5
+limits:
+  - scope: per-account (Free plan)
+    window: 1 second
+    limit: 1
+    burst: null
+  - scope: per-account (Starter plan)
+    window: 1 second
+    limit: 5
+    burst: null
+  - scope: per-account (Growth plan)
+    window: 1 second
+    limit: 10
+    burst: null
+  - scope: per-account (Business plan)
+    window: 1 second
+    limit: 25
+    burst: null
+  - scope: per-account (Enterprise plan)
+    window: 1 second
+    limit: custom, up to 1000
+    burst: null
+headers:
+  - name: x-geekflare-ratelimit-second
+    meaning: Max requests per second for your plan
+  - name: x-geekflare-ratelimit-remaining-second
+    meaning: Requests remaining in the current 1-second window
+  - name: x-geekflare-ratelimit-reset
+    meaning: Seconds until the current rate-limit window resets
+  - name: x-geekflare-credits-used
+    meaning: Credits used by this request
+  - name: x-geekflare-credits-remaining
+    meaning: Credits remaining in the account balance
+exhaustion:
+  status: 429
+  body: '{"message":"Rate limit exceeded. Please wait before making more requests.","apiStatus":"failure","apiCode":429}'
+  guidance: Wait at least x-geekflare-ratelimit-reset before retrying; exponential backoff with jitter recommended.
+note: Rate limits cap requests per second per plan, not concurrent connections. Credit exhaustion is a separate 402 error.

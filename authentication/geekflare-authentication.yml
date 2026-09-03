@@ -1,0 +1,44 @@
+generated: '2026-09-03'
+method: searched
+source: openapi/geekflare-openapi.json + https://docs.geekflare.com/intro
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - cookie
+  - header
+schemes:
+- name: x-api-key
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  description: API Key required for all endpoints
+  sources:
+  - openapi/geekflare-openapi.json
+- name: bearer-token
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  description: JWT token for Admin endpoints
+  sources:
+  - openapi/geekflare-openapi.json
+- name: gf_auth_session
+  type: apiKey
+  in: cookie
+  parameter: gf_auth_session
+  description: IDP session cookie
+  sources:
+  - openapi/geekflare-openapi.json
+- name: x-internal-key
+  type: apiKey
+  in: header
+  parameter: x-internal-key
+  description: Internal API key (Swagger only)
+  sources:
+  - openapi/geekflare-openapi.json
+docs: https://docs.geekflare.com/intro
+note: 'Public API consumers authenticate with the x-api-key header only — one key across every endpoint, single shared credit
+  pool, obtained free at auth.geekflare.com/register. The bearer-token (JWT, admin), gf_auth_session (IDP cookie) and x-internal-key
+  schemes declared in the spec are internal/dashboard surfaces, not for API customers. 401 bodies: "Missing x-api-key header"
+  / "Invalid x-api-key".'

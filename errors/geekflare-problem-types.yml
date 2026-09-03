@@ -1,0 +1,60 @@
+generated: '2026-09-03'
+method: searched
+source: https://docs.geekflare.com/error-codes + openapi/geekflare-openapi.json
+format: custom-envelope
+envelope:
+  shape: '{timestamp, apiStatus: success|failure, apiCode, message, meta, data}'
+  note: Every response carries an apiCode mirroring the HTTP status plus a human message; not RFC 9457 problem+json.
+problem_types:
+  - code: 400
+    title: Bad Request
+    detail: Invalid or missing parameters for the endpoint (declared on all 18 OpenAPI operations).
+    remediation: Validate the request body against the endpoint reference before sending.
+  - code: 401
+    title: Missing or invalid x-api-key
+    detail: 'Bodies: {"apiCode":401,"message":"Missing x-api-key header"} or "Invalid x-api-key".'
+    remediation: Fix the API key; do not retry unchanged.
+    docs: https://docs.geekflare.com/unauthorized
+  - code: 402
+    title: Credit balance exhausted
+    detail: Account has no remaining credits.
+    remediation: Add credits or upgrade the plan; watch x-geekflare-credits-remaining to anticipate.
+    docs: https://docs.geekflare.com/credit-exhausted
+  - code: 403
+    title: Endpoint requires a higher plan
+    detail: e.g. free plan calling a paid-only API such as Port Scanner.
+    remediation: Upgrade the plan; do not retry unchanged.
+    docs: https://docs.geekflare.com/forbidden
+  - code: 404
+    title: Wrong endpoint URL or HTTP method
+    detail: 'e.g. {"apiStatus":"failure","apiCode":404,"message":"API not found.","meta":{"method":"POST","endpoint":"/helloworld"}}'
+    remediation: Check the path and method against the API reference.
+  - code: 408
+    title: Request timeout
+    detail: Declared on POST /openport in the OpenAPI.
+    remediation: Retry with a longer scan window or fewer ports.
+  - code: 422
+    title: Unprocessable entity
+    detail: Declared on most scraping/rendering operations (webscraping, screenshot, url2pdf, tlsscan, loadtime, lighthouse, search, brokenlink, mixedcontent, metascraping) in the OpenAPI.
+    remediation: The target URL could not be processed; verify the target is reachable and parameters are coherent.
+  - code: 429
+    title: Rate limit exceeded
+    detail: Requests-per-second cap for the plan exceeded; x-geekflare-ratelimit-* headers describe the window.
+    remediation: Wait at least x-geekflare-ratelimit-reset, then retry with exponential backoff + jitter.
+    docs: https://docs.geekflare.com/rate-limit-exceeded
+  - code: 500
+    title: Internal server error
+    detail: Geekflare infrastructure issue; generally not charged against credits.
+    remediation: Check status.geekflare.com, retry with backoff.
+  - code: 502
+    title: Bad gateway
+    detail: Declared on POST /dnssec in the OpenAPI.
+    remediation: Retry with backoff.
+  - code: 504
+    title: Gateway timeout
+    detail: Declared on POST /dnssec and POST /ping in the OpenAPI.
+    remediation: Retry with backoff.
+retry_policy:
+  retryable: [429, 5xx]
+  non_retryable: [401, 402, 403, 404]
+  source: https://docs.geekflare.com/best-practices

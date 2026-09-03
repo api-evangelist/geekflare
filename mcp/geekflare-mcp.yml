@@ -1,0 +1,37 @@
+generated: '2026-09-03'
+method: searched
+source: https://docs.geekflare.com/mcp/overview + https://geekflare.com/mcp/
+name: Geekflare MCP Server
+status: official
+deployment:
+  mode: both
+  endpoint: https://mcp.geekflare.com/{API_KEY}/mcp
+  install: "npx -y @geekflare/mcp"
+  package: https://www.npmjs.com/package/@geekflare/mcp
+  auth: api-key
+  verified: searched
+  note: Remote endpoint embeds the API key in the URL path (Streamable HTTP). Probed https://mcp.geekflare.com/mcp unauthenticated on 2026-09-03 -> 404 {"error":"Not found. Use /{API_KEY}/mcp"}, confirming the host is live and key-gated; live tools/list requires a key. Local stdio server runs via npx with API_KEY env var. No OAuth discovery documents (/.well-known/oauth-authorization-server and /.well-known/oauth-protected-resource both 404).
+transports: [streamable-http, stdio]
+clients_documented: [Claude Desktop, Claude Code, Cursor, Cline, VS Code (GitHub Copilot), Zed, Devin Desktop (Windsurf), Roo Code, LM Studio, BoltAI, Amazon Q, n8n]
+tools:
+  - {name: webScrape, description: "Scrape full page content — Markdown, HTML, JSON, or LLM-ready text"}
+  - {name: metaScrape, description: "Extract meta tags, Open Graph, and Twitter card data"}
+  - {name: screenshot, description: "Capture full-page screenshots with ad blocking and CAPTCHA bypass"}
+  - {name: search, description: "Web, news, and image search with optional AI-grounded answers"}
+  - {name: dnsRecord, description: "Look up A, AAAA, CNAME, MX, TXT, and other DNS records"}
+  - {name: siteStatus, description: "Check if a site is up or down from any location"}
+  - {name: redirectCheck, description: "Trace the full redirect chain of a URL"}
+  - {name: brokenLink, description: "Find all broken links on a webpage"}
+  - {name: url2Pdf, description: "Convert any URL to a downloadable PDF"}
+  - {name: openPorts, description: "Scan open ports on a host"}
+  - {name: tlsScan, description: "Inspect TLS/SSL configuration and certificate details"}
+  - {name: loadTime, description: "Measure full page load time from any location"}
+  - {name: ttfb, description: "Measure Time To First Byte (TTFB)"}
+  - {name: httpHeader, description: "Retrieve HTTP response headers"}
+  - {name: httpProtocol, description: "Detect HTTP/1.1, HTTP/2, and HTTP/3 support"}
+  - {name: mixedContent, description: "Find HTTP resources loaded on HTTPS pages"}
+  - {name: dnsSec, description: "Check DNSSEC configuration"}
+  - {name: mtr, description: "Run MTR network diagnostic tests"}
+  - {name: ping, description: "Ping a host and return latency"}
+  - {name: lighthouse, description: "Run Lighthouse audits for performance, SEO, and accessibility"}
+note: Tool names and descriptions from the provider's MCP overview doc; live inputSchemas need authenticated introspection (key-in-path endpoint).

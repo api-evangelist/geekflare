@@ -1,0 +1,33 @@
+generated: '2026-09-03'
+method: derived
+source: openapi/geekflare-openapi.json + docs.geekflare.com sweep (intro, best-practices, error-codes) + geekflare.com/security/
+standards:
+  - id: oauth2
+    conforms: false
+    evidence: Authentication is a static x-api-key header; no OAuth2 flows in the OpenAPI securitySchemes or docs.
+  - id: oidc
+    conforms: false
+    evidence: /.well-known/openid-configuration 404 on geekflare.com; auth.geekflare.com is a first-party session IDP, no published OIDC discovery for API consumers.
+  - id: rfc9457
+    conforms: false
+    evidence: Errors use a custom {timestamp, apiStatus, apiCode, message} envelope, not application/problem+json.
+  - id: json:api
+    conforms: false
+    evidence: Custom success envelope {apiStatus, apiCode, meta, data}; not JSON:API media type.
+  - id: pagination
+    conforms: false
+    evidence: No pagination parameters or cursors anywhere in the 18-operation OpenAPI.
+  - id: idempotency
+    conforms: false
+    evidence: No Idempotency-Key mechanism; docs explicitly say retries re-run and re-charge (https://docs.geekflare.com/best-practices).
+  - id: rate-limit-headers
+    conforms: false
+    evidence: Rate limiting is signaled via proprietary x-geekflare-ratelimit-* headers rather than the IETF RateLimit-* draft fields; Retry-After not documented.
+  - id: openapi-3.1
+    conforms: true
+    evidence: Published contract at https://docs.geekflare.com/endpoint/openapi.json declares openapi 3.1.0 with 18 fully operationId'd, tagged, summarized operations.
+  - id: mcp
+    conforms: true
+    evidence: Official MCP server (Streamable HTTP at mcp.geekflare.com/{API_KEY}/mcp and stdio via @geekflare/mcp) documented at https://docs.geekflare.com/mcp/overview.
+domain_standard: none
+domain_standard_note: Web-utility/scraping market has no declared domain standard (no SCIM/OData/OpenRTB-style signature applicable); reward-only check, not penalised.
