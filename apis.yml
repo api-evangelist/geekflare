@@ -44,31 +44,27 @@ tags:
   - AI Agents
   - MCP
 apis:
-  - name: Geekflare API
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/geekflare.png
-    description: "REST API suite for scraping, search, data extraction, screenshots, DNS lookups, and web utilities — 18 operations on a single base URL with a shared credit pool, documented in a published OpenAPI 3.1 contract and mirrored by a 20-tool MCP server."
-    humanURL: https://docs.geekflare.com/intro
-    baseURL: https://api.geekflare.com
-    tags:
-      - Development
-      - Web Scraping
-      - Search
-      - Screenshots
-      - DNS
-    properties:
-      - type: Documentation
-        url: https://docs.geekflare.com/intro
-      - type: APIReference
-        url: https://docs.geekflare.com/endpoint/reference
-      - type: OpenAPI
-        url: openapi/geekflare-openapi.json
-      - type: GettingStarted
-        url: https://docs.geekflare.com/quickstart/index
-      - type: MCPServer
-        url: mcp/geekflare-mcp.yml
-      - type: ToolCrosswalk
-        url: mcp/geekflare-tool-crosswalk.yml
+- aid: geekflare:geekflare-api-tool-api
+  name: Geekflare API Tool API
+  description: The api-tool API from Geekflare — 18 operation(s) for api-tool.
+  humanURL: https://docs.geekflare.com/intro
+  baseURL: https://api.geekflare.com
+  tags:
+  - api-tool
+  properties:
+  - type: OpenAPI
+    url: openapi/geekflare-api-tool-api-openapi.yml
+  - type: Documentation
+    url: https://docs.geekflare.com/intro
+  - type: APIReference
+    url: https://docs.geekflare.com/endpoint/reference
+  - type: GettingStarted
+    url: https://docs.geekflare.com/quickstart/index
+  - type: ToolCrosswalk
+    url: mcp/geekflare-tool-crosswalk.yml
 common:
+  - type: MCPServer
+    url: mcp/geekflare-mcp.yml
   - type: Authentication
     url: authentication/geekflare-authentication.yml
   - type: DomainSecurity
